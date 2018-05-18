@@ -12,6 +12,14 @@
 <body>
     <h1>Menkar JS/JQ Synthesis</h1>
     <div class="container">
+        <div id="menu">
+            <button class="btn btn-primary" id="addModeButton">
+                Add Mode
+            </button>
+            <button class="btn btn-primary" id="showModeButton">
+                Show Mode
+            </button>
+        </div>
         <div id="input">
             <h2>Add a new movie!</h2>
             <input type="text" placeholder="title" id="titleIn">
@@ -21,9 +29,9 @@
         </div>
         <div id="output">
             <h2>Movies in my Collection:</h2>
-            <ul id="moviesOut">
+            <div id="moviesOut" class="row">
     
-            </ul>
+            </div>
         </div>
     </div>
 </body>

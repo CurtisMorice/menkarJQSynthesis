@@ -15,7 +15,15 @@ let movies = [];
 function readyNow(){
     console.log( 'JQ' );
     $( '#addButton' ).on( 'click', addMovie );
+    $( '#addModeButton' ).on( 'click', addModeGo );
+    $( '#showModeButton' ).on( 'click', showModeGo );
+    addModeGo();
 }
+
+function addModeGo(){
+    $( '#input' ).fadeIn();
+    $( '#output' ).hide();
+} // end addModeGo
 
 function addMovie(){
     console.log( 'in addMovie' );
@@ -38,14 +46,17 @@ function displayMovies(){
     // loop through array
     for( movie of movies ){
         // append each movie to DOM
-        let outputString = '<li>';
-            outputString += movie.title;
-            outputString += ' ';
-            outputString += movie.director;
-            outputString += ' ';
-            outputString += movie.year;
-        outputString += '</li>';
+        let outputString = '<div class="col-3">';
+            outputString += '<div class="card-header">' + movie.title + '</div>';
+            outputString += '<div class="card-body">' + movie.director + '</div>';
+            outputString += '<div class="card-footer">' + movie.year + '</div>';
+        outputString += '</div>';
         el.append( outputString );
     } // end for
 
 } // end displayMovies
+
+function showModeGo(){
+    $( '#input' ).hide();
+    $( '#output' ).fadeIn();
+} // end addModeGo
